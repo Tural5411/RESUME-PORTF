@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TuralPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_AboutMe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="600" />
+    <Property Name="Skills" Type="nvarchar" MaxLength="50" />
+    <Property Name="Download" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_AboutMePhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="tbl_Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="60" />
+    <Property Name="Firm" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="tbl_Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="600" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="tbl_CV">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fullname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Job" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="place" Type="nvarchar" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_CVPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="tbl_Education">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tarix" Type="nvarchar" MaxLength="60" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="tbl_Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+    <Property Name="Header" Type="nvarchar" MaxLength="60" />
+    <Property Name="Header2" Type="nvarchar" MaxLength="60" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="Button" Type="nvarchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="tbl_Pricing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="600" />
+    <Property Name="Header" Type="nvarchar" MaxLength="60" />
+    <Property Name="Header2" Type="nvarchar" MaxLength="60" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="Button" Type="nvarchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="tbl_SkillLeft">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skillname" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="tbl_SkillRight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skillname" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="tbl_WhatIDo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="500" />
+    <Property Name="Header" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="tbl_Work">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Header" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tarix" Type="nvarchar" MaxLength="60" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityContainer Name="TuralPortfolioModelStoreContainer">
+    <EntitySet Name="tbl_AboutMe" EntityType="Self.tbl_AboutMe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_AboutMePhoto" EntityType="Self.tbl_AboutMePhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Client" EntityType="Self.tbl_Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Contact" EntityType="Self.tbl_Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CV" EntityType="Self.tbl_CV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CVPhoto" EntityType="Self.tbl_CVPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Education" EntityType="Self.tbl_Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Post" EntityType="Self.tbl_Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Pricing" EntityType="Self.tbl_Pricing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SkillLeft" EntityType="Self.tbl_SkillLeft" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SkillRight" EntityType="Self.tbl_SkillRight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_WhatIDo" EntityType="Self.tbl_WhatIDo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Work" EntityType="Self.tbl_Work" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

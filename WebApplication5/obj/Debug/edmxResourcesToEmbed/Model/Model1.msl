@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TuralPortfolioModelStoreContainer" CdmEntityContainer="ResumeDB">
+    <EntitySetMapping Name="tbl_AboutMe">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_AboutMe">
+        <MappingFragment StoreEntitySet="tbl_AboutMe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Download" ColumnName="Download" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AboutMePhoto">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_AboutMePhoto">
+        <MappingFragment StoreEntitySet="tbl_AboutMePhoto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Client">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Client">
+        <MappingFragment StoreEntitySet="tbl_Client">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Firm" ColumnName="Firm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Contact">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Contact">
+        <MappingFragment StoreEntitySet="tbl_Contact">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CV">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_CV">
+        <MappingFragment StoreEntitySet="tbl_CV">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CVPhoto">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_CVPhoto">
+        <MappingFragment StoreEntitySet="tbl_CVPhoto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Education">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Education">
+        <MappingFragment StoreEntitySet="tbl_Education">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Post">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Post">
+        <MappingFragment StoreEntitySet="tbl_Post">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Header2" ColumnName="Header2" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Button" ColumnName="Button" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Pricing">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Pricing">
+        <MappingFragment StoreEntitySet="tbl_Pricing">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Header2" ColumnName="Header2" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Button" ColumnName="Button" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SkillLeft">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_SkillLeft">
+        <MappingFragment StoreEntitySet="tbl_SkillLeft">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Skillname" ColumnName="Skillname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SkillRight">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_SkillRight">
+        <MappingFragment StoreEntitySet="tbl_SkillRight">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Skillname" ColumnName="Skillname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_WhatIDo">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_WhatIDo">
+        <MappingFragment StoreEntitySet="tbl_WhatIDo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Work">
+      <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Work">
+        <MappingFragment StoreEntitySet="tbl_Work">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TuralPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_AboutMe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="600" />
+          <Property Name="Skills" Type="nvarchar" MaxLength="50" />
+          <Property Name="Download" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_AboutMePhoto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+        </EntityType>
+        <EntityType Name="tbl_Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="60" />
+          <Property Name="Firm" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="tbl_Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="600" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_CV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Job" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="place" Type="nvarchar" MaxLength="100" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_CVPhoto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+        </EntityType>
+        <EntityType Name="tbl_Education">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tarix" Type="nvarchar" MaxLength="60" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+          <Property Name="Header" Type="nvarchar" MaxLength="60" />
+          <Property Name="Header2" Type="nvarchar" MaxLength="60" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="Button" Type="nvarchar" MaxLength="600" />
+        </EntityType>
+        <EntityType Name="tbl_Pricing">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="600" />
+          <Property Name="Header" Type="nvarchar" MaxLength="60" />
+          <Property Name="Header2" Type="nvarchar" MaxLength="60" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="Button" Type="nvarchar" MaxLength="600" />
+        </EntityType>
+        <EntityType Name="tbl_SkillLeft">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="50" />
+          <Property Name="Skillname" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="tbl_SkillRight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="50" />
+          <Property Name="Skillname" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="tbl_WhatIDo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="500" />
+          <Property Name="Header" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="600" />
+        </EntityType>
+        <EntityType Name="tbl_Work">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tarix" Type="nvarchar" MaxLength="60" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityContainer Name="TuralPortfolioModelStoreContainer">
+          <EntitySet Name="tbl_AboutMe" EntityType="Self.tbl_AboutMe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AboutMePhoto" EntityType="Self.tbl_AboutMePhoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Client" EntityType="Self.tbl_Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Contact" EntityType="Self.tbl_Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_CV" EntityType="Self.tbl_CV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_CVPhoto" EntityType="Self.tbl_CVPhoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Education" EntityType="Self.tbl_Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Post" EntityType="Self.tbl_Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Pricing" EntityType="Self.tbl_Pricing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SkillLeft" EntityType="Self.tbl_SkillLeft" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SkillRight" EntityType="Self.tbl_SkillRight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_WhatIDo" EntityType="Self.tbl_WhatIDo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Work" EntityType="Self.tbl_Work" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TuralPortfolioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_AboutMe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="Skills" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Download" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_AboutMePhoto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Photo" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Photo" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Firm" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_CV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="place" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_CVPhoto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Photo" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Education">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tarix" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Photo" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Header2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Button" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Pricing">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Icon" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Header2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Button" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_SkillLeft">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Skillname" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_SkillRight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Skillname" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_WhatIDo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Icon" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Work">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tarix" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ResumeDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_AboutMe" EntityType="Self.tbl_AboutMe" />
+          <EntitySet Name="tbl_AboutMePhoto" EntityType="Self.tbl_AboutMePhoto" />
+          <EntitySet Name="tbl_Client" EntityType="Self.tbl_Client" />
+          <EntitySet Name="tbl_Contact" EntityType="Self.tbl_Contact" />
+          <EntitySet Name="tbl_CV" EntityType="Self.tbl_CV" />
+          <EntitySet Name="tbl_CVPhoto" EntityType="Self.tbl_CVPhoto" />
+          <EntitySet Name="tbl_Education" EntityType="Self.tbl_Education" />
+          <EntitySet Name="tbl_Post" EntityType="Self.tbl_Post" />
+          <EntitySet Name="tbl_Pricing" EntityType="Self.tbl_Pricing" />
+          <EntitySet Name="tbl_SkillLeft" EntityType="Self.tbl_SkillLeft" />
+          <EntitySet Name="tbl_SkillRight" EntityType="Self.tbl_SkillRight" />
+          <EntitySet Name="tbl_WhatIDo" EntityType="Self.tbl_WhatIDo" />
+          <EntitySet Name="tbl_Work" EntityType="Self.tbl_Work" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TuralPortfolioModelStoreContainer" CdmEntityContainer="ResumeDB">
+          <EntitySetMapping Name="tbl_AboutMe">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_AboutMe">
+              <MappingFragment StoreEntitySet="tbl_AboutMe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+                <ScalarProperty Name="Download" ColumnName="Download" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AboutMePhoto">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_AboutMePhoto">
+              <MappingFragment StoreEntitySet="tbl_AboutMePhoto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Client">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Client">
+              <MappingFragment StoreEntitySet="tbl_Client">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Firm" ColumnName="Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Contact">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Contact">
+              <MappingFragment StoreEntitySet="tbl_Contact">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CV">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_CV">
+              <MappingFragment StoreEntitySet="tbl_CV">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CVPhoto">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_CVPhoto">
+              <MappingFragment StoreEntitySet="tbl_CVPhoto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Education">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Education">
+              <MappingFragment StoreEntitySet="tbl_Education">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Post">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Post">
+              <MappingFragment StoreEntitySet="tbl_Post">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Header2" ColumnName="Header2" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Button" ColumnName="Button" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Pricing">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Pricing">
+              <MappingFragment StoreEntitySet="tbl_Pricing">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Header2" ColumnName="Header2" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Button" ColumnName="Button" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SkillLeft">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_SkillLeft">
+              <MappingFragment StoreEntitySet="tbl_SkillLeft">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Skillname" ColumnName="Skillname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SkillRight">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_SkillRight">
+              <MappingFragment StoreEntitySet="tbl_SkillRight">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Skillname" ColumnName="Skillname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_WhatIDo">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_WhatIDo">
+              <MappingFragment StoreEntitySet="tbl_WhatIDo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Work">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_Work">
+              <MappingFragment StoreEntitySet="tbl_Work">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
