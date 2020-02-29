@@ -8,7 +8,7 @@ namespace WebApplication5
 {
     public class ModelsClas
     {
-        ResumeDB db = new ResumeDB();
+       
         public tbl_CV CV { get; set; }
         public tbl_CVPhoto CVPHOTO  {get; set;}
         public tbl_AboutMe AboutMe { get; set; }

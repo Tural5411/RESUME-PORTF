@@ -1,8 +1,8 @@
-﻿@using WebApplication5.Model
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using WebApplication5.Model
 @model WebApplication5.ModelsClas
 <!--
 ===================
@@ -59,7 +59,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
                     <img src="@Model.AboutMePhoto.Photo" alt="" class="img-fluid">
-                </div>@*assets/images/ab-img.png*@
+                </div>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="mh-about-inner">
@@ -70,7 +70,7 @@
                     <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <ul>
 
-                         
+
                             <li><span>@Model.AboutMe.Skills</span></li>
                             <li><span>html</span></li>
                             <li><span>css</span></li>
@@ -95,21 +95,22 @@
 <section class="mh-service">
     <div class="container">
         <div class="row section-separator">
-            @*@foreach (tbl_WhatIDo wt in WhatIDo)*@
+            @foreach (tbl_WhatIDo wt in Model.WhatIDo)
             {
                 <div class="col-sm-4">
                     <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                        <i class="fa fa-bullseye purple-color"></i>
-                        <h3>UI Design</h3>
+                        <i class="@wt.Icon"></i>
+                        @*fa fa-bullseye purple-color*@
+                        <h3>@wt.Header</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                            magna aliquam erat volutpat.
+                            @wt.Description
                         </p>
                     </div>
                 </div>
 
             }
+
+
 
         </div>
     </div>
@@ -131,61 +132,21 @@
                     <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <h3>Technical Skills</h3>
                         <div class="each-skills">
-                            <div class="candidatos">
-                                <div class="parcial">
-                                    <div class="info">
-                                        <div class="nome">Javascript</div>
-                                        <div class="percentagem-num">86%</div>
-                                    </div>
-                                    <div class="progressBar">
-                                        <div class="percentagem" style="width: 86%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="candidatos">
-                                <div class="parcial">
-                                    <div class="info">
-                                        <div class="nome">Java</div>
-                                        <div class="percentagem-num">46%</div>
-                                    </div>
-                                    <div class="progressBar">
-                                        <div class="percentagem" style="width: 46%;"></div>
+                            @foreach (tbl_SkillLeft skl in Model.SkillLeft)
+                            {
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">@skl.Skillname</div>
+                                            <div class="percentagem-num">@skl.Header</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 86%;"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="candidatos">
-                                <div class="parcial">
-                                    <div class="info">
-                                        <div class="nome">Python</div>
-                                        <div class="percentagem-num">38%</div>
-                                    </div>
-                                    <div class="progressBar">
-                                        <div class="percentagem" style="width: 38%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="candidatos">
-                                <div class="parcial">
-                                    <div class="info">
-                                        <div class="nome">PHP</div>
-                                        <div class="percentagem-num">17%</div>
-                                    </div>
-                                    <div class="progressBar">
-                                        <div class="percentagem" style="width: 17%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="candidatos">
-                                <div class="parcial">
-                                    <div class="info">
-                                        <div class="nome">PHP</div>
-                                        <div class="percentagem-num">17%</div>
-                                    </div>
-                                    <div class="progressBar">
-                                        <div class="percentagem" style="width: 17%;"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -194,22 +155,16 @@
                 <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
                     <h3>Professional Skills</h3>
                     <ul class="mh-professional-progress">
-                        <li>
-                            <div class="mh-progress mh-progress-circle" data-progress="95"></div>
-                            <div class="pr-skill-name">Communication</div>
-                        </li>
-                        <li>
-                            <div class="mh-progress mh-progress-circle" data-progress="55"></div>
-                            <div class="pr-skill-name">Team Work</div>
-                        </li>
-                        <li>
-                            <div class="mh-progress mh-progress-circle" data-progress="86"></div>
-                            <div class="pr-skill-name">Project Management</div>
-                        </li>
-                        <li>
-                            <div class="mh-progress mh-progress-circle" data-progress="60"></div>
-                            <div class="pr-skill-name">Creativity</div>
-                        </li>
+
+                        @foreach (tbl_SkillRight skr in Model.SkillRight)
+                        {
+                            <li>
+                                <div class="mh-progress mh-progress-circle" data-progress="@skr.Header"></div>
+                                <div class="pr-skill-name">@skr.Skillname</div>
+                            </li>
+                        }
+
+
                     </ul>
                 </div>
             </div>
@@ -231,32 +186,18 @@
                         <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
                         <div class="mh-education-deatils">
                             <!-- Education Institutes-->
-                            <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <p>
-                                    It is a long established fact that a reader will be distracted by the readable content of a
-                                    page when looking at its layout. The point of using  Lorem Ipsum
-                                </p>
-                            </div>
-                            <!-- Education Institutes-->
-                            <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <p>
-                                    It is a long established fact that a reader will be distracted by the readable content of a
-                                    page when looking at its layout. The point of using  Lorem Ipsum
-                                </p>
-                            </div>
-                            <!-- Education Institutes-->
-                            <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <p>
-                                    It is a long established fact that a reader will be distracted by the readable content of a
-                                    page when looking at its layout. The point of using L orem Ipsum
-                                </p>
-                            </div>
+                            @foreach (tbl_Education ed in Model.Educations)
+                            {
+                                <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                    <h4>Art & Multimedia From <a href="#">@ed.Header</a></h4>
+                                    <div class="mh-eduyear">@ed.Tarix</div>
+                                    <p>
+                                        @ed.Description
+                                    </p>
+                                </div>
+                            }
+
+
                         </div>
                     </div>
                 </div>
@@ -265,35 +206,24 @@
                         <h3>Work Experience</h3>
                         <div class="mh-experience-deatils">
                             <!-- Education Institutes-->
-                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                                <h4>UI/UX Designer <a href="#">IronSketch</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <span>Responsibility :</span>
-                                <ul class="work-responsibility">
-                                    <li><i class="fa fa-circle"></i>Validate CSS</li>
-                                    <li><i class="fa fa-circle"></i>Project Management</li>
-                                </ul>
-                            </div>
-                            <!-- Education Institutes-->
-                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <span>Responsibility :</span>
-                                <ul class="work-responsibility">
-                                    <li><i class="fa fa-circle"></i>Validate CSS</li>
-                                    <li><i class="fa fa-circle"></i>Project Management</li>
-                                </ul>
-                            </div>
-                            <!-- Education Institutes-->
-                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <span>Responsibility :</span>
-                                <ul class="work-responsibility">
-                                    <li><i class="fa fa-circle"></i>Validate CSS</li>
-                                    <li><i class="fa fa-circle"></i>Project Management</li>
-                                </ul>
-                            </div>
+                            @foreach (tbl_Work wk in Model.Works)
+                            {
+                                <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                    <h4> <a href="#">@wk.Header</a></h4>
+                                    <div class="mh-eduyear">@wk.Tarix</div>
+                                    <span>Responsibility :</span>
+                                    <ul class="work-responsibility">
+                                        @foreach (tbl_Work w in Model.Works)
+                                        {
+                                            <li><i class="fa fa-circle"></i>@wk.Description</li>
+
+                                        }
+
+                                    </ul>
+                                </div>
+                            }
+
+
                         </div>
                     </div>
                 </div>
@@ -485,51 +415,28 @@
                 <div class="col-sm-12 section-title" data-wow-duration="0.8s" data-wow-delay="0.2s">
                     <h3>Pricing Table</h3>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                        <i class="fa fa-calendar"></i>
-                        <h4>Full-time work</h4>
-                        <p>I am available for full time</p>
-                        <h5>$1500</h5>
-                        <ul>
-                            <li>Web Development</li>
-                            <li>Advetising</li>
-                            <li>Game Development</li>
-                            <li>Music Writing</li>
-                        </ul>
-                        <a href="#" class="btn btn-fill">Hire Me</a>
+                @foreach (tbl_Pricing pr in Model.Pricings)
+                {
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <i class="@pr.Icon"></i>
+                            @*fa fa-calendar*@
+                            <h4>@pr.Header</h4>
+                            <p>@pr.Header2</p>
+                            <h5>@pr.Price</h5>
+                            <ul>
+                                @foreach (tbl_Pricing p in Model.Pricings)
+                                {
+                                    <li>@pr.Description</li>
+                                }
+
+                            </ul>
+                            <a href="#" class="btn btn-fill">@pr.Button</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                        <i class="fa fa-file"></i>
-                        <h4>Fixed Price Project</h4>
-                        <p>I am available for fixed roles</p>
-                        <h5>$500</h5>
-                        <ul>
-                            <li>Web Development</li>
-                            <li>Advetising</li>
-                            <li>Game Development</li>
-                            <li>Music Writing</li>
-                        </ul>
-                        <a href="#" class="btn btn-fill">Hire Me</a>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                        <i class="fa fa-hourglass"></i>
-                        <h4>Hourley work</h4>
-                        <p>I am available for Hourley projets</p>
-                        <h5>$50</h5>
-                        <ul>
-                            <li>Web Development</li>
-                            <li>Advetising</li>
-                            <li>Game Development</li>
-                            <li>Music Writing</li>
-                        </ul>
-                        <a href="#" class="btn btn-fill">Hire Me</a>
-                    </div>
-                </div>
+
+                }
+
             </div>
         </div>
     </div>
@@ -546,54 +453,28 @@
             <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                 <h3>Featured Posts</h3>
             </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <img src="assets/images/b-3.png" alt="" class="img-fluid">
-                    <div class="blog-inner">
-                        <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
-                        <div class="mh-blog-post-info">
-                            <ul>
-                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                            </ul>
+            @foreach (tbl_Post ps in Model.Posts)
+            {
+                <div class="col-sm-12 col-md-4">
+                    <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                        <img src="@ps.Photo" alt="" class="img-fluid">
+                        @*assets/images/b-3.png*@
+                        <div class="blog-inner">
+                            <h2><a href="blog-single.html">@ps.Header</a></h2>
+                            <div class="mh-blog-post-info">
+                                <ul>
+                                    <li><strong></strong><a href="#">@ps.Header2</a></li>
+
+                                </ul>
+                            </div>
+                            <p> @ps.Description</p>
+                            <a href="blog-single.html">@ps.Button</a>
                         </div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                        <a href="blog-single.html">Read More</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                    <img src="assets/images/b-2.png" alt="" class="img-fluid">
-                    <div class="blog-inner">
-                        <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
-                        <div class="mh-blog-post-info">
-                            <ul>
-                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                            </ul>
-                        </div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                        <a href="blog-single.html">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                    <img src="assets/images/b-1.png" alt="" class="img-fluid">
-                    <div class="blog-inner">
-                        <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
-                        <div class="mh-blog-post-info">
-                            <ul>
-                                <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                            </ul>
-                        </div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                        <a href="blog-single.html">Read More</a>
-                    </div>
-                </div>
-            </div>
+
+            }
+
         </div>
     </div>
 </section>
@@ -611,80 +492,22 @@
                     <h3>Client Reviews</h3>
                 </div>
                 <div class="col-sm-12 wow fadeInUp" id="mh-client-review" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>
-                                Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality
-                            </p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>
-                                Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality
-                            </p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
+                    @foreach (tbl_Client cl in Model.Clients)
+                    {
+                        <div class="each-client-item">
+                            <div class="mh-client-item dark-bg black-shadow-1">
+                                <img src="@cl.Photo" alt="" class="img-fluid">
 
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>
-                                Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality
-                            </p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
+                                <p>
+                                    @cl.Description
+                                </p>
+                                <h4>@cl.FullName</h4>
+                                <span>@cl.Firm</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>
-                                Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality
-                            </p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>
-                                Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality
-                            </p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
 
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>
-                                Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality
-                            </p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
+                    }
+
                 </div>
             </div>
         </div>
