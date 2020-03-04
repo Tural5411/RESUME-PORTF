@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="TuralPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="tbl_AboutMe">
           <Key>
             <PropertyRef Name="Id" />
@@ -21,6 +31,14 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Photo" Type="nvarchar" MaxLength="600" />
+        </EntityType>
+        <EntityType Name="tbl_admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminEmail" Type="nvarchar" MaxLength="60" />
+          <Property Name="AdminPassword" Type="nvarchar" MaxLength="600" />
         </EntityType>
         <EntityType Name="tbl_Client">
           <Key>
@@ -127,8 +145,10 @@
           <Property Name="Description" Type="nvarchar" MaxLength="300" />
         </EntityType>
         <EntityContainer Name="TuralPortfolioModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_AboutMe" EntityType="Self.tbl_AboutMe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_AboutMePhoto" EntityType="Self.tbl_AboutMePhoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Client" EntityType="Self.tbl_Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Contact" EntityType="Self.tbl_Contact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_CV" EntityType="Self.tbl_CV" Schema="dbo" store:Type="Tables" />
@@ -146,6 +166,16 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TuralPortfolioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="tbl_AboutMe">
           <Key>
             <PropertyRef Name="Id" />
@@ -162,6 +192,14 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Photo" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="AdminPassword" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tbl_Client">
           <Key>
@@ -268,8 +306,10 @@
           <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="ResumeDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="tbl_AboutMe" EntityType="Self.tbl_AboutMe" />
           <EntitySet Name="tbl_AboutMePhoto" EntityType="Self.tbl_AboutMePhoto" />
+          <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" />
           <EntitySet Name="tbl_Client" EntityType="Self.tbl_Client" />
           <EntitySet Name="tbl_Contact" EntityType="Self.tbl_Contact" />
           <EntitySet Name="tbl_CV" EntityType="Self.tbl_CV" />
@@ -288,6 +328,17 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="TuralPortfolioModelStoreContainer" CdmEntityContainer="ResumeDB">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbl_AboutMe">
             <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_AboutMe">
               <MappingFragment StoreEntitySet="tbl_AboutMe">
@@ -304,6 +355,15 @@
               <MappingFragment StoreEntitySet="tbl_AboutMePhoto">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_admin">
+            <EntityTypeMapping TypeName="TuralPortfolioModel.tbl_admin">
+              <MappingFragment StoreEntitySet="tbl_admin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -170,6 +170,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\AdminPanel\AdminPanelAreaRegistration.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\AboutMeController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\AboutMePhotoController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\AdminController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\AdminLoginController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\AutehntionController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\ClientController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\CVController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\CVPhotoController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\EducationController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\PostController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\SkillLeftController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\SkillRightController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\WhatIDoController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\WorkController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -195,10 +209,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\tbl_AboutMe.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tbl_AboutMePhoto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tbl_admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tbl_Client.cs">
@@ -271,6 +291,7 @@
     <Content Include="Areas\AdminPanel\AdminFront\assets\images\slack.png" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\images\switch.png" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\lazimsiz\images\background\img5.html" />
+    <Content Include="Areas\AdminPanel\AdminFront\assets\libs\css\mainStyle.css" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\libs\css\style.css" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\libs\js\dashboard-contact.js" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\libs\js\dashboard-ecommerce.js" />
@@ -633,6 +654,7 @@
     <Content Include="Areas\AdminPanel\AdminFront\assets\vendor\timeline\img\cd-icon-picture.svg" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\vendor\timeline\js\main.js" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\vendor\vector-map\jqvmap.css" />
+    <Content Include="Areas\AdminPanel\AdminFront\index.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -651,6 +673,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="PublicFront\Ferhad.jpg" />
+    <Content Include="PublicFront\Ferhad1.jpg" />
+    <Content Include="PublicFront\Malik.jpg" />
+    <Content Include="PublicFront\Malik1.jpg" />
+    <Content Include="PublicFront\tural.jpg" />
     <Content Include="PublicFront\assets\css\colors\blue-munsell.css" />
     <Content Include="PublicFront\assets\css\colors\blue.css" />
     <Content Include="PublicFront\assets\css\colors\defauld.css" />
@@ -717,6 +744,7 @@
     <Content Include="PublicFront\assets\plugins\js\validator.min.js" />
     <Content Include="PublicFront\assets\plugins\js\wow.min.js" />
     <Content Include="PublicFront\home-one.html" />
+    <Content Include="PublicFront\Tural1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="PublicFront\assets\icons\font-awesome-4.7.0\fonts\fontawesome-webfont3e6e.eot" />
@@ -726,13 +754,6 @@
     <Content Include="PublicFront\assets\icons\font-awesome-4.7.0\fonts\fontawesome-webfontd41d.eot" />
     <Content Include="PublicFront\assets\images\pr-0.jif" />
     <Content Include="PublicFront\assets\images\pr-1.jif" />
-    <EntityDeploy Include="Model\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\AdminPanel\Views\web.config" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\vendor\fonts\circular-std\CircularStd-Black.woff" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\vendor\fonts\circular-std\CircularStd-BlackItalic.woff" />
@@ -771,6 +792,73 @@
     <Content Include="Areas\AdminPanel\AdminFront\assets\vendor\summernote\editor-fonts\summernote4c4d.ttf" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\vendor\summernote\editor-fonts\summernote4c4d.woff" />
     <Content Include="Areas\AdminPanel\AdminFront\assets\vendor\summernote\editor-fonts\summernoted41d.eot" />
+    <Content Include="Areas\AdminPanel\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CV\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CV\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CV\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CV\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CV\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMe\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMe\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMe\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMe\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMe\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMePhoto\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMePhoto\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMePhoto\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMePhoto\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AboutMePhoto\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\WhatIDo\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\WhatIDo\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\WhatIDo\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\WhatIDo\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\WhatIDo\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillLeft\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillLeft\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillLeft\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillLeft\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillLeft\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillRight\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillRight\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillRight\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillRight\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\SkillRight\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Education\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Education\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Education\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Education\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Education\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Work\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Work\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Work\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Work\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Work\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Post\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Post\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Post\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Post\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Post\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Client\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Client\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Client\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Client\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Client\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\AdminLogin\Login.cshtml" />
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\AdminPanel\Views\CVPhoto\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CVPhoto\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CVPhoto\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CVPhoto\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\CVPhoto\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -816,12 +904,16 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\PostDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\AdminPanel\Controllers\" />
     <Folder Include="Areas\AdminPanel\Models\" />
-    <Folder Include="Areas\AdminPanel\Views\Shared\" />
+    <Folder Include="Areas\AdminPanel\Views\AdminAccount\" />
+    <Folder Include="Areas\AdminPanel\Views\Autehntion\" />
+    <Folder Include="Areas\AdminPanel\Views\Home\" />
+    <Folder Include="Uploads\AboutMePhoto\" />
+    <Folder Include="Uploads\CVPhoto\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

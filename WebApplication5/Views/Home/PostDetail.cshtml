@@ -1,0 +1,35 @@
+﻿@using WebApplication5.Model
+
+@{
+    ViewBag.Title = "PostDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    tbl_Post post = ViewBag.AllPost;
+}
+
+<h2>PostDetail</h2>
+
+<div class="container-fluid">
+    <row>
+        <div class="col-lg-8">
+            <div class="imgPost">
+                <img class="img-thumbnail" src="@post.Photo" alt="Alternate Text" />
+            </div>
+
+        </div>
+        <div class="col-lg-4">
+            <div class="postText">
+                <h2>@post.Header</h2><br />
+                <h4>@post.Header2</h4> <br />
+
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="postDes">
+                <p style="letter-spacing:1px; font-weight:600; line-height:1.6em; ">  @post.Description </p>
+            </div>
+        </div>
+
+    </row>
+
+
+</div>

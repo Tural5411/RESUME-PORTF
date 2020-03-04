@@ -25,8 +25,10 @@ namespace WebApplication5.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tbl_AboutMe> tbl_AboutMe { get; set; }
         public virtual DbSet<tbl_AboutMePhoto> tbl_AboutMePhoto { get; set; }
+        public virtual DbSet<tbl_admin> tbl_admin { get; set; }
         public virtual DbSet<tbl_Client> tbl_Client { get; set; }
         public virtual DbSet<tbl_Contact> tbl_Contact { get; set; }
         public virtual DbSet<tbl_CV> tbl_CV { get; set; }

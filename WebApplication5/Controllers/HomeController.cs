@@ -44,5 +44,15 @@ namespace WebApplication5.Controllers
 
             return View();
         }
+
+        public ActionResult PostDetail(int? id)
+        {
+            if (id == null) return HttpNotFound();
+            tbl_Post PsDetail = db.tbl_Post.FirstOrDefault(ps => ps.Id == id);
+            if (PsDetail != null) return HttpNotFound();
+            ViewBag.postSingle = PsDetail;
+            ViewBag.AllPost = db.tbl_Post.ToList();
+            return View();
+        }
     }
 }
