@@ -103,3 +103,14 @@ C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplicat
 C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplication5.csproj.CopyComplete
 C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplication5.dll
 C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplication5.pdb
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplication5.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\bin\az\WebApplication5.resources.dll
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\bin\en\WebApplication5.resources.dll
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\bin\ru\WebApplication5.resources.dll
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\az\WebApplication5.resources.dll
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\en\WebApplication5.resources.dll
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\ru\WebApplication5.resources.dll
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplication5.Rhome.az.resources
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplication5.Rhome.en.resources
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplication5.Rhome.ru.resources
+C:\Users\USER\source\repos\WebApplication5\WebApplication5\obj\Debug\WebApplication5.Rhome.resources

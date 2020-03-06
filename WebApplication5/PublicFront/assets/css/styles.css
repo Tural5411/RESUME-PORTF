@@ -591,9 +591,9 @@ ul li {
 }
 
 .dark-bg {
-  background-color: #202026;
+  background-color: red ;
 }
-
+/*#202026*/
 .section-separator {
   padding: 60px 0;
   padding-top: 100px;
@@ -605,9 +605,9 @@ ul li {
 }
 
 .bg-black {
-  background-color: #000;
+  background-color: blue ;
 }
-
+/*#000*/
 .form-control {
   -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.16), 0 0px 2px 0 rgba(255, 255, 255, 0.12);
   box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.16), 0 0px 2px 0 rgba(255, 255, 255, 0.12);

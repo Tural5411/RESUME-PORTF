@@ -28,10 +28,10 @@ namespace WebApplication5.Areas.AdminPanel.Controllers
         {
             if(adm.AdminEmail!=string.Empty && adm.AdminPassword != string.Empty)
             {
-                if(!db.tbl_admin.Any(ad=>ad.AdminEmail==adm.AdminEmail && ad.AdminPassword == adm.AdminPassword))
+                if(db.tbl_admin.Any(ad=>ad.AdminEmail==adm.AdminEmail && ad.AdminPassword == adm.AdminPassword))
                 {
                     Session["ActiveAdmin"] = adm;
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Admin");
                 }
             }
 

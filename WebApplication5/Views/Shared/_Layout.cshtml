@@ -33,16 +33,18 @@
     <!-- Custom CSS-->
     <link rel="stylesheet" href="~/PublicFront/assets/css/styles.css">
     <link rel="stylesheet" href="~/PublicFront/assets/css/responsive.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
 
     <!-- Colors -->
     @*<link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/blue.css" title="blue">
-    <link rel="stylesheet" href="~/PublicFront/assets/css/colors/defauld.css" title="defauld">
-    <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/green.css" title="green">
-    <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/blue-munsell.css" title="blue-munsell">
-    <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/orange.css" title="orange">
-    <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/purple.css" title="purple">
-    <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/slate.css" title="slate">
-    <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/yellow.css" title="yellow">*@
+        <link rel="stylesheet" href="~/PublicFront/assets/css/colors/defauld.css" title="defauld">
+        <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/green.css" title="green">
+        <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/blue-munsell.css" title="blue-munsell">
+        <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/orange.css" title="orange">
+        <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/purple.css" title="purple">
+        <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/slate.css" title="slate">
+        <link rel="alternate stylesheet" href="~/PublicFront/assets/css/colors/yellow.css" title="yellow">*@
 </head>
 <body class="dark-vertion black-bg">
     <!-- Start Loader -->
@@ -74,26 +76,34 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-0 ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#mh-home">Home</a>
+                                <a class="nav-link" href="#mh-home">@Rhome.LHome</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#mh-about">About</a>
+                                <a class="nav-link" href="#mh-about">@Rhome.LAbout</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#mh-skills">Skills</a>
+                                <a class="nav-link" href="#mh-skills">@Rhome.LSkills</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#mh-experience">Experiences</a>
+                                <a class="nav-link" href="#mh-experience">@Rhome.LExperience</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#mh-portfolio">Portfolio</a>
+                                <a class="nav-link" href="#mh-portfolio">@Rhome.LPortfolio</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#mh-blog">Blog</a>
+                                <a class="nav-link" href="#mh-blog">@Rhome.LBlog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#mh-contact">Contact</a>
+                                <a class="nav-link" href="#mh-contact">@Rhome.LContact</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-az"> </span> Azerbaijan</a>
+                                <div style="background:black; color:white; " class="dropdown-menu" aria-labelledby="dropdown09">
+                                    <a style="background:black; color:white; " class="dropdown-item" href="@Url.Action("langSetting","MainLanguage",new { lang= "az"})"><span class="flag-icon flag-icon-az"> </span>  Azerbaijan</a>
+                                    <a style="background:black; color:white; " class="dropdown-item" href="@Url.Action("langSetting","MainLanguage",new { lang= "ru"})"><span class="flag-icon flag-icon-ru"> </span>  Russian</a>
+                                    <a style="background:black; color:white; " class="dropdown-item" href="@Url.Action("LangSetting","MainLanguage",new { lang= "en"})"><span class="flag-icon flag-icon-us"> </span>  English</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -101,8 +111,6 @@
             </div>
         </div>
     </header>
-
-
     @RenderBody()
 
     <!--
@@ -216,6 +224,9 @@
     -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- jQuery -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="~/PublicFront/assets/plugins/js/jquery.min.js"></script>
     <!-- popper -->
     <script src="~/PublicFront/assets/plugins/js/popper.min.js"></script>

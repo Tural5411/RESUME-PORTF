@@ -49,7 +49,7 @@ namespace WebApplication5.Controllers
         {
             if (id == null) return HttpNotFound();
             tbl_Post PsDetail = db.tbl_Post.FirstOrDefault(ps => ps.Id == id);
-            if (PsDetail != null) return HttpNotFound();
+            if (PsDetail == null) return HttpNotFound();
             ViewBag.postSingle = PsDetail;
             ViewBag.AllPost = db.tbl_Post.ToList();
             return View();
